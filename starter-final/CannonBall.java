@@ -14,5 +14,19 @@ public class CannonBall extends Actor
      */
     public void act()
     {
+        /* tried to code the ball */
+        List<CannonBall> cannonBalls = getWorld().getObjects(CannonBall.class);
+        touching();
+    }
+
+    /**
+     * 
+     */
+    public void touching()
+    {
+        /* playing the sound*/
+        if (isTouching(Ladybug.class)) {
+            Greenfoot.playSound("lose.wav");
+        }
     }
 }
