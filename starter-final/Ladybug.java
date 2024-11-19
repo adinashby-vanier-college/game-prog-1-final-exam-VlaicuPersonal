@@ -14,5 +14,60 @@ public class Ladybug extends Actor
      */
     public void act()
     {
+        /* calling the functions*/
+        move();
+        /* chechcking if its won, transition and play sound*/
+        if (isGameWon()) {
+            transitionToGameWonWorld();
+        }
+    }
+
+    /**
+     * 
+     */
+    public void move()
+    {
+        /* making the bug move*/
+        if (Greenfoot.isKeyDown("down")) {
+            move(-2);
+        }
+        if (Greenfoot.isKeyDown("up")) {
+            move(2);
+        }
+        if (Greenfoot.isKeyDown("left")) {
+            turn(-2);
+        }
+        if (Greenfoot.isKeyDown("right")) {
+            turn(2);
+        }
+    }
+
+    /**
+     * 
+     */
+    public boolean isGameWon()
+    {
+        /* verifying if bug toches the ending location*/
+        Actor finishLocation = getOneIntersectingObject(FinishLocation.class);
+        if (isTouching(FinishLocation.class)) {
+            Greenfoot.playSound("win.wav");
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * 
+     */
+    public void transitionToGameWonWorld()
+    {
+        /* transitioning to the win screen*/
+        World myWorld = getWorld();
+        myWorld.stopped();
+        World gameWonWorld =  new  GameWonWorld();
+        gameWonWorld.started();
+        Greenfoot.setWorld(gameWonWorld);
     }
 }
