@@ -20,6 +20,9 @@ public class Ladybug extends Actor
         if (isGameWon()) {
             transitionToGameWonWorld();
         }
+        if (isGameLost()) {
+            transitionToGameLostWorld();
+        }
     }
 
     /**

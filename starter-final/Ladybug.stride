@@ -22,6 +22,11 @@
                         <call expression="transitionToGameWonWorld()" expression-java="transitionToGameWonWorld()" enable="true"/>
                     </ifStatements>
                 </if>
+                <if condition="isGameLost()" condition-java="isGameLost()" enable="true">
+                    <ifStatements>
+                        <call expression="transitionToGameLostWorld()" expression-java="transitionToGameLostWorld()" enable="true"/>
+                    </ifStatements>
+                </if>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="move" enable="true">
