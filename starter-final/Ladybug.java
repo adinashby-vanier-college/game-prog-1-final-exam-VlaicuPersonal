@@ -61,6 +61,22 @@ public class Ladybug extends Actor
     /**
      * 
      */
+    public boolean isGameLost()
+    {
+        /* verifying if bug toches ball*/
+        Actor finishLocation = getOneIntersectingObject(CannonBall.class);
+        if (isTouching(CannonBall.class)) {
+            Greenfoot.playSound("lose.wav");
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * 
+     */
     public void transitionToGameWonWorld()
     {
         /* transitioning to the win screen*/
@@ -69,5 +85,18 @@ public class Ladybug extends Actor
         World gameWonWorld =  new  GameWonWorld();
         gameWonWorld.started();
         Greenfoot.setWorld(gameWonWorld);
+    }
+
+    /**
+     * 
+     */
+    public void transitionToGameLostWorld()
+    {
+        /* transitioning to the win screen*/
+        World myWorld = getWorld();
+        myWorld.stopped();
+        World gameLostWorld =  new  GameLostWorld();
+        gameLostWorld.started();
+        Greenfoot.setWorld(gameLostWorld);
     }
 }

@@ -70,6 +70,24 @@
                 </if>
             </body>
         </method>
+        <method access="public" type="boolean" type-java="boolean" name="isGameLost" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <comment xml:space="preserve">verifying if bug toches ball</comment>
+                <variable type="Actor" type-java="Actor" name="finishLocation" value="getOneIntersectingObject(CannonBall.class)" value-java="getOneIntersectingObject(CannonBall.class)" enable="true"/>
+                <if condition="isTouching(CannonBall.class)" condition-java="isTouching(CannonBall.class)" enable="true">
+                    <ifStatements>
+                        <call expression="Greenfoot.playSound(&quot;lose.wav&quot;)" expression-java="Greenfoot.playSound(&quot;lose.wav&quot;)" enable="true"/>
+                        <return value="true" value-java="true" enable="true"/>
+                    </ifStatements>
+                    <else>
+                        <return value="false" value-java="false" enable="true"/>
+                    </else>
+                </if>
+            </body>
+        </method>
         <method access="public" type="void" type-java="void" name="transitionToGameWonWorld" enable="true">
             <javadoc xml:space="preserve"/>
             <params/>
@@ -81,6 +99,19 @@
                 <variable type="World" type-java="World" name="gameWonWorld" value="new GameWonWorld()" value-java=" new GameWonWorld()" enable="true"/>
                 <call expression="gameWonWorld.started()" expression-java="gameWonWorld.started()" enable="true"/>
                 <call expression="Greenfoot.setWorld(gameWonWorld)" expression-java="Greenfoot.setWorld(gameWonWorld)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="transitionToGameLostWorld" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <comment xml:space="preserve">transitioning to the win screen</comment>
+                <variable type="World" type-java="World" name="myWorld" value="getWorld()" value-java="getWorld()" enable="true"/>
+                <call expression="myWorld.stopped()" expression-java="myWorld.stopped()" enable="true"/>
+                <variable type="World" type-java="World" name="gameLostWorld" value="new GameLostWorld()" value-java=" new GameLostWorld()" enable="true"/>
+                <call expression="gameLostWorld.started()" expression-java="gameLostWorld.started()" enable="true"/>
+                <call expression="Greenfoot.setWorld(gameLostWorld)" expression-java="Greenfoot.setWorld(gameLostWorld)" enable="true"/>
             </body>
         </method>
     </methods>
