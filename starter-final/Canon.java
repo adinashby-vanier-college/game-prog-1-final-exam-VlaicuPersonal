@@ -23,6 +23,7 @@ public class Canon extends Actor
      */
     public void move()
     {
+        /* making them move in a straight line*/
         if (Canon.class != null) {
             move(2);
         }

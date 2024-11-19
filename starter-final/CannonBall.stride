@@ -14,6 +14,7 @@
             <params/>
             <throws/>
             <body>
+                <comment xml:space="preserve">tried to code the ball </comment>
                 <variable type="List&lt;CannonBall&gt;" type-java="List&lt;CannonBall&gt;" name="cannonBalls" value="getWorld().getObjects(CannonBall.class)" value-java="getWorld().getObjects(CannonBall.class)" enable="true"/>
                 <call expression="touching()" expression-java="touching()" enable="true"/>
             </body>

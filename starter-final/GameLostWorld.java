@@ -6,17 +6,17 @@ import greenfoot.*;
 /**
  * 
  */
-public class GameWonWorld extends World
+public class GameLostWorld extends World
 {
 
     /**
-     * Constructor for objects of class GameWonWorld.
+     * Constructor for objects of class GameLostWorld.
      */
-    public GameWonWorld()
+    public GameLostWorld()
     {
-        super(560, 560, 1);
-        /* the message displayed*/
-        showText("Congratulations, You Win!", 260, 260);
+        super(600, 400, 1);
+        /* the message*/
+        showText("Game Over!", 260, 260);
     }
 
     /**
@@ -24,7 +24,7 @@ public class GameWonWorld extends World
      */
     public void showText(String message, int x, int y)
     {
-        /* setting up the text*/
+        /* here im setting up the text*/
         GreenfootImage bg = getBackground();
         Font font =  new  Font(50);
         bg.setFont(font);

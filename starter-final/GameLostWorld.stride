@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class name="GameWonWorld" extends="World" extends-java="World" enable="true" strideversion="1">
+<class name="GameLostWorld" extends="World" extends-java="World" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>
     <imports>
         <import target="java.util.*" enable="true"/>
@@ -9,13 +9,13 @@
     <fields/>
     <constructors>
         <constructor access="public" enable="true">
-            <javadoc xml:space="preserve">Constructor for objects of class GameWonWorld.</javadoc>
+            <javadoc xml:space="preserve">Constructor for objects of class GameLostWorld.</javadoc>
             <params/>
             <throws/>
-            <delegate target="super" params="560,560,1" params-java="560, 560, 1"/>
+            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
             <body>
-                <comment xml:space="preserve">the message displayed</comment>
-                <call expression="showText(&quot;Congratulations, You Win!&quot;,260,260)" expression-java="showText(&quot;Congratulations, You Win!&quot;, 260, 260)" enable="true"/>
+                <comment xml:space="preserve">the message</comment>
+                <call expression="showText(&quot;Game Over!&quot;,260,260)" expression-java="showText(&quot;Game Over!&quot;, 260, 260)" enable="true"/>
             </body>
         </constructor>
     </constructors>
@@ -29,7 +29,7 @@
             </params>
             <throws/>
             <body>
-                <comment xml:space="preserve">setting up the text</comment>
+                <comment xml:space="preserve">here im setting up the text</comment>
                 <variable type="GreenfootImage" type-java="GreenfootImage" name="bg" value="getBackground()" value-java="getBackground()" enable="true"/>
                 <variable type="Font" type-java="Font" name="font" value="new Font(50)" value-java=" new Font(50)" enable="true"/>
                 <call expression="bg.setFont(font)" expression-java="bg.setFont(font)" enable="true"/>

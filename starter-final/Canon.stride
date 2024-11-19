@@ -24,6 +24,7 @@
             <params/>
             <throws/>
             <body>
+                <comment xml:space="preserve">making them move in a straight line</comment>
                 <if condition="Canon.class!=null" condition-java="Canon.class != null" enable="true">
                     <ifStatements>
                         <call expression="move(2)" expression-java="move(2)" enable="true"/>
